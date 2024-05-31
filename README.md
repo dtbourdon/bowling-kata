@@ -11,3 +11,9 @@ of 10 pin bowling scoring.
 
 The implementation in the oop package represents a typical OOP solution where a Frame is smart enough
 reason about it's own state. The ScoreKeeper communicates with each Frame to keep the score.
+
+## Prereqs to Test
+
+This is a Java/Maven project that uses Junit for testing. All required dependencies are defined in the pom file.
+
+To run just issue the follwing command: mvn clean test.
