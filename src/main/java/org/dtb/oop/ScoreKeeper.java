@@ -41,9 +41,7 @@ public class ScoreKeeper {
             Frame refFrame = frames.get(frameListIdx);
             RollResult rollResult = refFrame.addRoll(roll);
 
-            if ((   rollResult.equals(RollResult.ADDED_TO_BONUS) ||
-                    rollResult.equals(RollResult.NOT_ADDED)) &&
-                    !refFrame.isTenthFrame()) { // process next frame
+            if (rollResult.equals(RollResult.NOT_ADDED_TO_FRAME) && !refFrame.isTenthFrame()) { // process next frame
                 frameListIdx++;
             } else { // roll was assigned, we're done
                 rollAssigned = true;

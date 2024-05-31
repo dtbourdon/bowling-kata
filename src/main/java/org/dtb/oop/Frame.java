@@ -24,7 +24,7 @@ public class Frame {
      * @return RoleResult of ADDED_TO_FRAME, ADDED_TO_BONUS, NOT_ADDED
      */
     public RollResult addRoll(int roll) {
-        RollResult rollResult = RollResult.NOT_ADDED;
+        RollResult rollResult = RollResult.NOT_ADDED_TO_FRAME;
 
         /*
             A frame exists in multiple states. The allocation of a roll depends on the current
@@ -45,18 +45,15 @@ public class Frame {
                 break;
             case SPARE:
                 bonus1 = roll;
-                rollResult  = RollResult.ADDED_TO_BONUS;
                 frameScore = roll1 + roll2 + bonus1;
                 frameState = FrameState.COMPLETE;
                 break;
             case STRIKE_BONUS_1:
                 bonus1 = roll;
-                rollResult  = RollResult.ADDED_TO_BONUS;
                 frameState = FrameState.STRIKE_BONUS_2;
                 break;
             case STRIKE_BONUS_2:
                 bonus2 = roll;
-                rollResult  = RollResult.ADDED_TO_BONUS;
                 frameScore = roll1 + bonus1 + bonus2;
                 frameState = FrameState.COMPLETE;
                 break;
